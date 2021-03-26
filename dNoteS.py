@@ -74,15 +74,5 @@ def start():
 	    y = event.y
 	    editmenu.post(event.x_root, event.y_root)
 	text.bind("<Button-3>", popup)
-	def hotkeys(event):
-		if event.keycode==86:
-			event.widget.event_generate("<<Paste>>")
-		if event.keycode==67: 
-			event.widget.event_generate("<<Copy>>")    
-		if event.keycode==88: 
-			event.widget.event_generate("<<Cut>>")
-		if event.keycode==65: 
-			event.widget.event_generate("<<SelectAll>>")
-	text.bind("<Control-KeyPress>", hotkeys)
 	root.mainloop()
 start() 
