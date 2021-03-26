@@ -27,7 +27,7 @@ def start():
 		hot = Tk()
 		hot.resizable(False, False)
 		hot.title("Быстрые клавиши")
-		lb = Label(hot, font=('Arial', 15), text='Ctrl + (+) - закрепить заметку\nCtrl + (-) - открепить заметку\nAlt + 7 - •\nAlt + 1 - ☺').pack()
+		lb = Label(hot, font=('Arial', 15), text='Ctrl + N - новая заметка\nCtrl + (+) - закрепить заметку\nCtrl + (-) - открепить заметку\nCtrl + Q - закрыть заметку\nAlt + 7 - •\nAlt + 1 - ☺').pack()
 		hot.mainloop()
 		
 	keyboard.add_hotkey('Ctrl + N', start)
