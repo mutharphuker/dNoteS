@@ -1,6 +1,5 @@
-Version 0.2
-
 dNoteS - beautiful notes on your desktop.
+Version 0.2
 
 **Functions:**
 + Pinning to screen
