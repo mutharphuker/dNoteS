@@ -1,8 +1,19 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter.messagebox import showerror, showinfo
 from PIL import Image
 import keyboard
+import json
 import os
+
+with open("lang.json", "r", encoding="utf-8") as file:
+	lng = json.load(file)
+if lng['current'] == "eng":
+	lang = lng['eng']
+elif lng['current'] == "rus":
+	lang = lng['rus']
+elif lng['current'] == "uzb":
+	lang = lng['uzb']
 
 def start():
 	root = Tk()
@@ -17,25 +28,17 @@ def start():
 	def help():
 		help = Tk()
 		help.geometry("400x360")
-		help.title("dNoteS - О программе")
+		help.title(lang[0])
 		help.resizable(False, False)
 		lb = Label(help, text='dNoteS', fg='#00FF78', font=('Segoe Print', 70)).pack()
-		lb1 = Label(help, font=('Arial', 10), text='dNoteS - программма для заметок на рабочем столе\nВерсия 1.0 (02.2021)\n\nPowered by Python 3.8 (tkinter)\n\nОбратная связь:\nGmail - ddxoffi@gmail.com\nTelegram - t.me/ddx_offi/\n\nddx Inc. 2021').pack()
+		lb1 = Label(help, font=('Arial', 10), text=lang[1]).pack()
 		help.mainloop()
-
-	def hotbabyes():
-		hot = Tk()
-		hot.resizable(False, False)
-		hot.title("Быстрые клавиши")
-		lb = Label(hot, font=('Arial', 15), text='Ctrl + N - новая заметка\nCtrl + (+) - закрепить заметку\nCtrl + (-) - открепить заметку\nCtrl + Q - закрыть заметку\nAlt + 7 - •\nAlt + 1 - ☺').pack()
-		hot.mainloop()
 		
 	keyboard.add_hotkey('Ctrl + N', start)
 	keyboard.add_hotkey('Ctrl + Q', lambda: root.destroy())
 	keyboard.add_hotkey('Ctrl + Plus', lambda: root.overrideredirect(True))
 	keyboard.add_hotkey('Ctrl + -', lambda: root.overrideredirect(False))
 	keyboard.add_hotkey('F1', help)
-	keyboard.add_hotkey('F2', hotbabyes)
 
 	yellow = PhotoImage(file='icons\\yellow.png')
 	blue = PhotoImage(file='icons\\blue.png')
@@ -53,13 +56,25 @@ def start():
 		if var2.get():
 			root.overrideredirect(True)
 		else:
-			root.overrideredirect(False)		
+			root.overrideredirect(False)	
+
+	def language(which):
+		lng['current'] = which
+		with open("lang.json", "w", encoding="utf-8") as file:
+			json.dump(lng, file)
+		showinfo(message=lang[7])
+
+	langmenu = Menu(tearoff=0)
+	langmenu.add_command(label='English', command=lambda: language("eng"))
+	langmenu.add_command(label='Русский', command=lambda: language("rus"))
+	langmenu.add_command(label='O`zbekcha', command=lambda: language("uzb"))
 
 	editmenu = Menu(tearoff=0)
-	editmenu.add_command(label='Новая', command=start)
-	editmenu.add_checkbutton(label='Закрепить', command=over, variable=var2)
-	editmenu.add_checkbutton(label='Всегда впереди', command=top, variable=var)
-	editmenu.add_command(label='Заркыть', command=lambda: root.destroy())
+	editmenu.add_command(label=lang[2], accelerator='Ctrl + N', command=start)
+	editmenu.add_checkbutton(label=lang[3], accelerator='Ctrl + (+)', command=over, variable=var2)
+	editmenu.add_checkbutton(label=lang[4], command=top, variable=var)
+	editmenu.add_cascade(label=lang[5], menu=langmenu)
+	editmenu.add_command(label=lang[6], accelerator='Ctrl + Q', command=lambda: root.destroy())
 	editmenu.add_separator()
 	editmenu.add_command(image=yellow, command=lambda: text.config(bg='#FDF78E'))
 	editmenu.add_command(image=blue, command=lambda: text.config(bg='#69afff'))
@@ -74,5 +89,15 @@ def start():
 	    y = event.y
 	    editmenu.post(event.x_root, event.y_root)
 	text.bind("<Button-3>", popup)
+	def hotkeys(event):
+		if event.keycode==86:
+			event.widget.event_generate("<<Paste>>")
+		if event.keycode==67: 
+			event.widget.event_generate("<<Copy>>")    
+		if event.keycode==88: 
+			event.widget.event_generate("<<Cut>>")
+		if event.keycode==65: 
+			event.widget.event_generate("<<SelectAll>>")
+	text.bind("<Control-KeyPress>", hotkeys)
 	root.mainloop()
 start() 
