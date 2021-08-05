@@ -1,9 +1,13 @@
-dNoteS.
-Версия 1.0 (02.2021)
+Version 0.2
 
 dNoteS - beautiful notes on your desktop.
 
-Hotkeys:
+**Functions:**
++ Pinning to screen
++ Always ahead
++ Various themes
+
+**Hotkeys:**
 Ctrl + N - new note
 Ctrl + (+) - pin note
 Ctrl + (-) - unpin note
