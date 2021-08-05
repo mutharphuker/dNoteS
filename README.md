@@ -25,4 +25,5 @@ ddxSoftware. All rights reserved.
 © ddx Inc. 2021
 
 Demo:
-![Demo](https://user-images.githubusercontent.com/70449559/112687083-bf43d900-8e98-11eb-8c9a-605f91493a94.png)
+![demo](https://user-images.githubusercontent.com/70449559/128358914-9b0135e2-b4fc-4e60-855a-449e2a49a79d.png)
+
