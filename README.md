@@ -1,7 +1,7 @@
 dNoteS - beautiful notes on your desktop.
 Version 0.2
 
-**Functions:**
+**Features:**
 + Pinning to screen
 + Always ahead
 + Various themes
