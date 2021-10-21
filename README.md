@@ -1,4 +1,5 @@
-dNoteS - beautiful notes on your desktop.
+<h1>dNoteS</h1>
+Beautiful notes on your desktop.
 <p>Version 0.2</p>
 
 **Features:**
@@ -15,4 +16,4 @@ Gmail - ddxoffi@gmail.com
 Telegram - t.me/ddx_offi/
 
 ddxSoftware. All rights reserved.
-© ddx Inc. 2021
+<p>© ddx Inc. 2021</p>
