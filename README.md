@@ -1,6 +1,6 @@
 <h1>dNoteS</h1>
 Beautiful notes on your desktop.
-<p>Version 0.2</p>
+<p>Version 0.3</p>
 
 **Features:**
 + Pinning to screen
