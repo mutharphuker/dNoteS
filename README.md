@@ -4,14 +4,12 @@ Beautiful notes on your desktop.
 
 **Features:**
 + Pinning to screen
++ Paste circle, check, smile symbols
 + Always ahead
 + Various themes
 
-![demo](https://user-images.githubusercontent.com/70449559/128358914-9b0135e2-b4fc-4e60-855a-449e2a49a79d.png)
-
-Feedback:
-Gmail - ddxoffi@gmail.com
-Telegram - t.me/ddx_offi/
+![dnotes1](https://user-images.githubusercontent.com/70449559/138722239-80d97bf3-07f3-46df-8f91-747525ebe2dc.png)
+![dnotes2](https://user-images.githubusercontent.com/70449559/138722246-f6831106-fed4-4d1b-b470-c0370c8bfbe4.png)
 
 ddxSoftware. All rights reserved.
 <p>© ddx Inc. 2021</p>
